@@ -1,17 +1,16 @@
-const Discord = require('discord.js')
-const bot = new Discord.Client();
+require('dotenv').config();
 
-const token = 'NzIzNjM1NzEwMzI5ODgwNjE3.Xu0kEg.3ProroJuG6upSiM3pqpGndmy-u4';
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+});
 
-bot.on('ready', ()=> {
-  console.log('This bot is online');
-})
-
-
-bot.on('message', msg =>{
-  if(msg.content === "HELLO"){
-    msg.reply('HELLO FRIEND!')
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('pong');
   }
-})
-bot.login(token);
+});
+
+client.login(process.env.DISCORD_TOKEN);
