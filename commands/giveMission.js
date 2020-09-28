@@ -24,7 +24,7 @@ module.exports.giveMisions = options => {
     return mission;
   }
 
-  return 'Kill Killa';
+  return 'Make Friends with Killa';
 };
 
 function _factory() {
