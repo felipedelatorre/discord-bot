@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const Discord = require('discord.js');
 const { randomMap } = require('./commands/randomMap');
-const { giveMission } = require('./commands/giveMission');
+const { giveMisions } = require('./commands/giveMission');
 
 const client = new Discord.Client();
 
@@ -26,7 +26,7 @@ client.on('message', msg => {
   if (command === 'givemission') {
     const options = input[1];
 
-    reply = giveMission(options);
+    reply = giveMisions(options);
     msg.reply(reply);
   }
 
